@@ -3,6 +3,7 @@ package com.iricky.manulife.dao;
 import com.iricky.manulife.model.Person;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDao {
@@ -12,4 +13,10 @@ public interface PersonDao {
         return insertPerson(id, person);
     }
     List<Person> selectAllPerson();
+
+    Optional<Person> selectPersonById(UUID id);
+
+    int deletePersonById(UUID id);
+
+    int updatePersonById(UUID id, Person person);
 }
